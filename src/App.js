@@ -22,8 +22,8 @@ class BooksApp extends React.Component {
   render() {
     const {books}=this.state
     return (
-      <BrowserRouter>
       <div className="app">
+      <Route exact path='/' render={() => (
           <div className="list-books">
             <div className="list-books-title">
               <h1>MyReads</h1>
@@ -37,10 +37,11 @@ class BooksApp extends React.Component {
               <Link to='/search'>Search</Link>
             </div>
           </div>
-      </div>
-      </BrowserRouter>
-              )}
-    
+      )}
+      />
+      <Route exact path='/search' component={Search}/>
+       </div>       
+   ) 
   }
-
+}
 export default BooksApp
