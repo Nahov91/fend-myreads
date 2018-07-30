@@ -1,16 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Book from './Book'
-import BookShelfChanger from './BookShelfChanger'
 
-export class Shelf extends Component {
+class Shelf extends React.Component {
   render() {
-    const {title} = this.props
+    const {title, books, shelf} = this.props
     return (
         <div className="bookshelf">
         <h2 className="bookshelf-title">{title}</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
-            <Book/>
+          <li>
+            {books.filter(book=>book.shelf===shelf).map((book) =>(
+                <Book 
+                book={book}
+                key={book.id}/>
+          ))}
+          </li>
           </ol>
         </div>
       </div>

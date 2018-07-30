@@ -5,6 +5,7 @@ import './App.css'
 import Search from './Search';
 import Shelf from './Shelf'
 import BookShelfChanger from './BookShelfChanger'
+import Book from './Book'
 
 class BooksApp extends React.Component {
   state = {
@@ -18,6 +19,7 @@ class BooksApp extends React.Component {
   }
 
   render() {
+    const {books}=this.state
     return (
       <div className="app">
           <div className="list-books">
@@ -25,22 +27,17 @@ class BooksApp extends React.Component {
               <h1>MyReads</h1>
             </div>
             <div className="list-books-content">
-                /********** Currently Reading *****/
-                <Shelf title='Currently Reading'/>
-                /********** WantToRead ********/
-
-                <Shelf title='Want to read'/>
-                    /******* Read Component *******/
-                <Shelf title='Read'/>
+                <Shelf title='Currently Reading' books={books} shelf='currentlyReading'/>
+                <Shelf title='Want to read' books={books} shelf='wantToRead'/>
+                <Shelf title='Read' books={books} shelf='read'/>
             </div>
-                    /******* Search Component *****/
             <div className="open-search">
               <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
             </div>
           </div>
-        )}
       </div>
-    )
-  }}
+              )}
+    
+  }
 
 export default BooksApp
