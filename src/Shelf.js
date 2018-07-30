@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
-import BookShelfChanger from './BookShelfChanger'
 import Book from './Book'
+import BookShelfChanger from './BookShelfChanger'
 
-export class WantToRead extends Component {
+export class Shelf extends Component {
   render() {
+    const {title} = this.props
     return (
         <div className="bookshelf">
-        <h2 className="bookshelf-title">Want to Read</h2>
+        <h2 className="bookshelf-title">{title}</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
-          <Book/>
+            <Book/>
           </ol>
         </div>
       </div>
@@ -17,4 +18,4 @@ export class WantToRead extends Component {
   }
 }
 
-export default WantToRead
+export default Shelf
