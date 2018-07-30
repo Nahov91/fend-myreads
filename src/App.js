@@ -6,6 +6,7 @@ import Search from './Search';
 import Shelf from './Shelf'
 import BookShelfChanger from './BookShelfChanger'
 import Book from './Book'
+import { BrowserRouter } from 'react-router-dom';
 
 class BooksApp extends React.Component {
   state = {
@@ -21,6 +22,7 @@ class BooksApp extends React.Component {
   render() {
     const {books}=this.state
     return (
+      <BrowserRouter>
       <div className="app">
           <div className="list-books">
             <div className="list-books-title">
@@ -32,10 +34,11 @@ class BooksApp extends React.Component {
                 <Shelf title='Read' books={books} shelf='read'/>
             </div>
             <div className="open-search">
-              <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+              <Link to='/search'>Search</Link>
             </div>
           </div>
       </div>
+      </BrowserRouter>
               )}
     
   }
