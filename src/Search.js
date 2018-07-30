@@ -3,8 +3,6 @@ import React from 'react';
 class Search extends React.Component {
     render(){
         return(
-
-        {this.state.showSearchPage ? (
             <div className="search-books">
               <div className="search-books-bar">
                 <a className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</a>
@@ -25,8 +23,7 @@ class Search extends React.Component {
                 <ol className="books-grid"></ol>
               </div>
             </div>
-          ) : (
-        )
+          )
     }
 }
 
