@@ -3,7 +3,10 @@ import { Route, Link } from 'react-router-dom'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 import Search from './Search';
-
+import Read from './Read'
+import BookShelfChanger from './BookShelfChanger'
+import currentlyReading from './CurrentlyReading'
+import wantToRead from './WantToRead'
 
 class BooksApp extends React.Component {
   state = {
