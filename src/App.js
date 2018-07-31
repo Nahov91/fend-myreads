@@ -19,6 +19,7 @@ class BooksApp extends React.Component {
     });
   }
 
+
   render() {
     const { books } = this.state;
     return (
@@ -46,7 +47,7 @@ class BooksApp extends React.Component {
             </div>
           )}
         />
-        <Route exact path="/search" component={Search} />
+        <Route exact path="/search" component={Search} books={books}/>
       </div>
     );
   }
