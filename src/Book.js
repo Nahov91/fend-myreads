@@ -14,10 +14,10 @@ class Book extends Component {
               height: 193
             }}
           >
-          <img
-            src={book.imageLinks ? book.imageLinks.smallThumbnail : ""}
-            alt={book.title}
-          />
+            <img
+              src={book.imageLinks ? book.imageLinks.smallThumbnail : ""}
+              alt={book.title}
+            />
           </div>
           <BookShelfChanger
             shelf={shelf}
@@ -28,7 +28,7 @@ class Book extends Component {
         <div className="book-title">{book.title}</div>
         <div className="book-authors">{book.authors}</div>
       </div>
-    )
+    );
   }
 }
 

@@ -20,13 +20,14 @@ class BooksApp extends React.Component {
   }
 
   updateShelf = (book, shelf) => {
-      book.shelf=shelf
-      this.setState((current)=>({
-        books: current.books.filter((currentBook)=>currentBook.id!== book.id).concat([book])
-      }))
-      BooksAPI.update(book, shelf)
-    }
-  
+    book.shelf = shelf;
+    this.setState(current => ({
+      books: current.books
+        .filter(currentBook => currentBook.id !== book.id)
+        .concat([book])
+    }));
+    BooksAPI.update(book, shelf);
+  };
 
   render() {
     const { books } = this.state;
@@ -47,8 +48,18 @@ class BooksApp extends React.Component {
                   shelf="currentlyReading"
                   updateShelf={this.updateShelf}
                 />
-                <Shelf title="Want to read" books={books} shelf="wantToRead" updateShelf={this.updateShelf}/>
-                <Shelf title="Read" books={books} shelf="read" updateShelf={this.updateShelf}/>
+                <Shelf
+                  title="Want to read"
+                  books={books}
+                  shelf="wantToRead"
+                  updateShelf={this.updateShelf}
+                />
+                <Shelf
+                  title="Read"
+                  books={books}
+                  shelf="read"
+                  updateShelf={this.updateShelf}
+                />
               </div>
               <div className="open-search">
                 <Link to="/search">Search</Link>
@@ -56,11 +67,13 @@ class BooksApp extends React.Component {
             </div>
           )}
         />
-        <Route exact path="/search" render={() => <Search books={books} updateShelf={this.updateShelf} 
+        <Route
+          exact
+          path="/search"
+          render={() => <Search books={books} updateShelf={this.updateShelf} />}
         />
-        }/>
       </div>
-    )
+    );
   }
 }
 export default BooksApp;

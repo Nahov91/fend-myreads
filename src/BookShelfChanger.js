@@ -5,10 +5,13 @@ class BookShelfChanger extends React.Component {
     const { book, updateShelf, shelf } = this.props;
     return (
       <div className="book-shelf-changer">
-        <select key='default' defaultValue='none'  value={shelf} onChange={(e) => updateShelf(book, e.target.value)}>
-          <option value="move" disabled>
-            Move to...
-          </option>
+        <select 
+        key='default' 
+        defaultValue='none'  
+        value={shelf} 
+        onChange={(e) => updateShelf(book, e.target.value)}
+        >
+          <option value="move" disabled>Move to...</option>
           <option value="currentlyReading">Currently Reading</option>
           <option value="wantToRead">Want to Read</option>
           <option value="read">Read</option>

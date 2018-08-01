@@ -12,7 +12,14 @@ class Shelf extends React.Component {
             <li>
               {books
                 .filter(book => book.shelf === shelf)
-                .map(book => <Book book={book} key={book.id} updateShelf={updateShelf} shelf={shelf} />)}
+                .map(book => (
+                  <Book
+                    book={book}
+                    key={book.id}
+                    updateShelf={updateShelf}
+                    shelf={shelf}
+                  />
+                ))}
             </li>
           </ol>
         </div>
