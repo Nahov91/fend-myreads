@@ -3,7 +3,7 @@ import Book from "./Book";
 
 class Shelf extends React.Component {
   render() {
-    const { title, books, shelf } = this.props;
+    const { title, books, shelf, updateShelf } = this.props;
     return (
       <div className="bookshelf">
         <h2 className="bookshelf-title">{title}</h2>
@@ -12,7 +12,7 @@ class Shelf extends React.Component {
             <li>
               {books
                 .filter(book => book.shelf === shelf)
-                .map(book => <Book book={book} key={book.id} />)}
+                .map(book => <Book book={book} key={book.id} updateShelf={updateShelf} shelf={shelf} />)}
             </li>
           </ol>
         </div>

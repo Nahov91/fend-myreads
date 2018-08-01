@@ -3,7 +3,7 @@ import BookShelfChanger from "./BookShelfChanger";
 
 class Book extends Component {
   render() {
-    const { book } = this.props;
+    const { book, updateShelf, shelf } = this.props;
     return (
       <div className="book">
         <div className="book-top">
@@ -13,14 +13,22 @@ class Book extends Component {
               width: 128,
               height: 193
             }}
+          >
+          <img
+            src={book.imageLinks ? book.imageLinks.smallThumbnail : ""}
+            alt={book.title}
           />
-          <img src={book.imageLinks ? book.imageLinks.smallThumbnail : ''} alt= {book.title} />
-          <BookShelfChanger shelf={book.shelf} />
+          </div>
+          <BookShelfChanger
+            shelf={shelf}
+            book={book}
+            updateShelf={updateShelf}
+          />
         </div>
         <div className="book-title">{book.title}</div>
         <div className="book-authors">{book.authors}</div>
       </div>
-    );
+    )
   }
 }
 
