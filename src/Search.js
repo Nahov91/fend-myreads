@@ -3,6 +3,7 @@ import { Route, Link } from "react-router-dom";
 import * as BooksAPI from "./BooksAPI";
 import escapeRegExp from "escape-string-regexp";
 import Book from "./Book";
+import BookShelChanger from './BookShelfChanger'
 
 class Search extends React.Component {
   state = {
@@ -31,7 +32,7 @@ class Search extends React.Component {
 
   render() {
     const { resultQuery, query } = this.state;
-    const { books } = this.props;
+    const { updateShelf } = this.props;
     let bookShown=[];
 
     if (query) {
@@ -58,10 +59,12 @@ class Search extends React.Component {
         <div className="search-books-results">
           <ol className="books-grid">
             {bookShown.map(resultQuery => {
-              bookShown.map((book) => (book.id === bookShown.id ));
+              let searchedItemShelf;
+              bookShown.map((book) => (book.id === bookShown.id ? searchedItemShelf=book.shelf :''
+            ));
               return (
                 <li key={resultQuery.id}>
-                  <Book book={resultQuery} key={resultQuery.id} />
+                  <Book book={resultQuery} updateShelf={updateShelf} shelf={searchedItemShelf}/>
                 </li>
               );
             })}

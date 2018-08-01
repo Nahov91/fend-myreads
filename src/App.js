@@ -56,9 +56,11 @@ class BooksApp extends React.Component {
             </div>
           )}
         />
-        <Route exact path="/search" component={Search} books={books}/>
+        <Route exact path="/search" render={() => <Search books={books} updateShelf={this.updateShelf} 
+        />
+        }/>
       </div>
-    );
+    )
   }
 }
 export default BooksApp;
