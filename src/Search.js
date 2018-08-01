@@ -33,7 +33,6 @@ class Search extends React.Component {
     const { resultQuery, query } = this.state;
     const { books } = this.props;
     let bookShown=[];
-console.log(this.props.books)
 
     if (query) {
       const match = new RegExp(escapeRegExp(query), "i");
@@ -61,7 +60,7 @@ console.log(this.props.books)
             {bookShown.map(resultQuery => {
               bookShown.map((book) => (book.id === bookShown.id ));
               return (
-                <li>
+                <li key={resultQuery.id}>
                   <Book book={resultQuery} key={resultQuery.id} />
                 </li>
               );
