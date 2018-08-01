@@ -3,7 +3,6 @@ import { Route, Link } from "react-router-dom";
 import * as BooksAPI from "./BooksAPI";
 import escapeRegExp from "escape-string-regexp";
 import Book from "./Book";
-import BookShelChanger from './BookShelfChanger'
 
 class Search extends React.Component {
   state = {

@@ -4,9 +4,6 @@ import * as BooksAPI from "./BooksAPI";
 import "./App.css";
 import Search from "./Search";
 import Shelf from "./Shelf";
-import BookShelfChanger from "./BookShelfChanger";
-import Book from "./Book";
-import { BrowserRouter } from "react-router-dom";
 
 class BooksApp extends React.Component {
   state = {
