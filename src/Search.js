@@ -32,7 +32,7 @@ class Search extends React.Component {
 
   render() {
     const { resultQuery, query } = this.state;
-    const { updateShelf } = this.props;
+    const { updateShelf, books } = this.props;
     let bookShown=[];
 
     if (query) {
@@ -60,7 +60,7 @@ class Search extends React.Component {
           <ol className="books-grid">
             {bookShown.map(resultQuery => {
               let searchedItemShelf;
-              bookShown.map((book) => (book.id === bookShown.id ? searchedItemShelf=book.shelf :''
+              books.map((book) => (book.id === resultQuery.id ? searchedItemShelf=book.shelf :''
             ));
               return (
                 <li key={resultQuery.id}>
