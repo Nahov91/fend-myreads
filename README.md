@@ -1,5 +1,5 @@
-# Restaurant Review app
-This is a Udacity Front end web developer ND project, where I had to optimize a website for using it on various devices with a great accessibility and offline experience.
+# MyReads webapp
+This is a Udacity Front end web developer ND project, where I had to make a site alive with React.js and React Router.
 
 ## Get started
 
