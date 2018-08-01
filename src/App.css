@@ -201,6 +201,8 @@ body,
   font-size: 0.8em;
 }
 
+/* tablet view has the search
+    at the bottom for better reachability */
 @media screen and (max-width: 1024px) {
   .search-books-bar {
     bottom: 0;
@@ -211,6 +213,7 @@ body,
   }
 }
 
+/* 3 column view at this resolution  */
 @media screen and (max-width: 830px) {
   .books-grid li {
     grid-template-columns: 1fr 1fr 1fr;
@@ -219,7 +222,7 @@ body,
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-
+/* 2 column view for mobile devices */
 @media screen and (max-width: 640px) {
   .books-grid li {
     grid-template-columns: 1fr 1fr;

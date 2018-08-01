@@ -14,8 +14,10 @@ class Book extends Component {
               height: 193
             }}
           >
+          {/* book cover images from database or generated
+              placeholder using placeholder.com if not found. */}
             <img
-              src={book.imageLinks ? book.imageLinks.smallThumbnail : ""}
+              src={book.imageLinks ? book.imageLinks.smallThumbnail : "http://via.placeholder.com/128x193/2e7d32/fff?text=No+cover+found"}
               alt={book.title}
             />
           </div>

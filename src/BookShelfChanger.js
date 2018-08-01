@@ -5,6 +5,8 @@ class BookShelfChanger extends React.Component {
     const { book, updateShelf, shelf } = this.props;
     return (
       <div className="book-shelf-changer">
+      {/* Has the options when you move a book from 
+          one shelf to another. Default value is 'none' */}
         <select 
         key='default' 
         defaultValue='none'  
