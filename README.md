@@ -9,6 +9,7 @@ This is a webapp where you can sort your books into different shelves based on i
 ### How to get it working?
 - Clone or download all the files from this repository
 - In your terminal go to the folder using cd command
+- Run `npm install`
 - Run the server with the following command :`npm start`
 - open up _localhost: 3000_ in your browser 
 
